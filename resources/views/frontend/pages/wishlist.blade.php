@@ -9,7 +9,7 @@
 					<div class="bread-inner">
 						<ul class="bread-list">
 							<li><a href="{{('home')}}">Home<i class="ti-arrow-right"></i></a></li>
-							<li class="active"><a href="javascript:void(0);">Wishlist</a></li>
+							<li class="active"><a href="javascript:void(0);">Mục Yêu Thích</a></li>
 						</ul>
 					</div>
 				</div>
@@ -27,10 +27,10 @@
 					<table class="table shopping-summery">
 						<thead>
 							<tr class="main-hading">
-								<th>PRODUCT</th>
-								<th>NAME</th>
-								<th class="text-center">TOTAL</th> 
-								<th class="text-center">ADD TO CART</th> 
+								<th>Sản Phẩm</th>
+								<th>Tên Sản Phẩm</th>
+								<th class="text-center">Tỏng giá trị</th> 
+								<th class="text-center">Thêm Vào Giỏ Hàng</th> 
 								<th class="text-center"><i class="ti-trash remove-icon"></i></th>
 							</tr>
 						</thead>
@@ -47,14 +47,13 @@
 											<p class="product-des">{!!($wishlist['summary']) !!}</p>
 										</td>
 										<td class="total-amount" data-title="Total"><span>${{$wishlist['amount']}}</span></td>
-										<td><a href="{{route('add-to-cart',$wishlist->product['slug'])}}" class='btn text-white'>Add To Cart</a></td>
+										<td><a href="{{route('add-to-cart',$wishlist->product['slug'])}}" class='btn text-white'>Thêm Vào Giỏ Hàng</a></td>
 										<td class="action" data-title="Remove"><a href="{{route('wishlist-delete',$wishlist->id)}}"><i class="ti-trash remove-icon"></i></a></td>
 									</tr>
 								@endforeach
 							@else 
 								<tr>
-									<td class="text-center">
-										There are no any wishlist available. <a href="{{route('product-grids')}}" style="color:blue;">Continue shopping</a>
+									<td class="text-center"> Không có bất kỳ sản phẩm yêu thích nào. <a href="{{route('product-grids')}}" style="color:blue;">Tiếp tục mua sắm </a>
 
 									</td>
 								</tr>
@@ -78,8 +77,8 @@
 					<!-- Start Single Service -->
 					<div class="single-service">
 						<i class="ti-rocket"></i>
-						<h4>Free shiping</h4>
-						<p>Orders over $100</p>
+						<h4>Miễn phí vận chuyển</h4>
+						<p>Đơn hàng trên $100</p>
 					</div>
 					<!-- End Single Service -->
 				</div>
@@ -87,8 +86,8 @@
 					<!-- Start Single Service -->
 					<div class="single-service">
 						<i class="ti-reload"></i>
-						<h4>Free Return</h4>
-						<p>Within 30 days returns</p>
+						<h4>Hoàn trả miễn phí</h4>
+						<p>Trong vòng 30 ngày trả lại</p>
 					</div>
 					<!-- End Single Service -->
 				</div>
@@ -96,8 +95,8 @@
 					<!-- Start Single Service -->
 					<div class="single-service">
 						<i class="ti-lock"></i>
-						<h4>Sucure Payment</h4>
-						<p>100% secure payment</p>
+						<h4>Thanh toán an toàn</h4>
+						<p>Thanh toán an toàn 100%</p>
 					</div>
 					<!-- End Single Service -->
 				</div>
@@ -105,8 +104,8 @@
 					<!-- Start Single Service -->
 					<div class="single-service">
 						<i class="ti-tag"></i>
-						<h4>Best Peice</h4>
-						<p>Guaranteed price</p>
+						<h4>Giá tốt nhất</h4>
+						<p>Giá Gốc</p>
 					</div>
 					<!-- End Single Service -->
 				</div>

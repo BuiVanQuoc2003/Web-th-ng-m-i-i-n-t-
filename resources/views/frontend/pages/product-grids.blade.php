@@ -10,8 +10,8 @@
                 <div class="col-12">
                     <div class="bread-inner">
                         <ul class="bread-list">
-                            <li><a href="index1.html">Home<i class="ti-arrow-right"></i></a></li>
-                            <li class="active"><a href="blog-single.html">Shop Grid</a></li>
+                            <li><a href="index1.html">Trang chủ<i class="ti-arrow-right"></i></a></li>
+                            <li class="active"><a href="blog-single.html">Danh sách sản phẩm</a></li>
                         </ul>
                     </div>
                 </div>
@@ -63,7 +63,7 @@
                                 <!--/ End Single Widget -->
                                 <!-- Shop By Price -->
                                     <div class="single-widget range">
-                                        <h3 class="title">Shop by Price</h3>
+                                        <h3 class="title">Mua sắm theo giá</h3>
                                         <div class="price-filter">
                                             <div class="price-filter-inner">
                                                 @php
@@ -72,9 +72,9 @@
                                                 @endphp
                                                 <div id="slider-range" data-min="0" data-max="{{$max}}"></div>
                                                 <div class="product_filter">
-                                                <button type="submit" class="filter_button">Filter</button>
+                                                <button type="submit" class="filter_button">Bộ Lọc</button>
                                                 <div class="label-input">
-                                                    <span>Range:</span>
+                                                    <span>Phạm vi:</span>
                                                     <input style="" type="text" id="amount" readonly/>
                                                     <input type="hidden" name="price_range" id="price_range" value="@if(!empty($_GET['price'])){{$_GET['price']}}@endif"/>
                                                 </div>
@@ -86,7 +86,7 @@
                                     <!--/ End Shop By Price -->
                                 <!-- Single Widget -->
                                 <div class="single-widget recent-post">
-                                    <h3 class="title">Recent post</h3>
+                                    <h3 class="title">Bài đăng gần đây</h3>
                                     {{-- {{dd($recent_products)}} --}}
                                     @foreach($recent_products as $product)
                                         <!-- Single Post -->
@@ -112,7 +112,7 @@
                                 <!--/ End Single Widget -->
                                 <!-- Single Widget -->
                                 <div class="single-widget category">
-                                    <h3 class="title">Brands</h3>
+                                    <h3 class="title">Thương Hiệu</h3>
                                     <ul class="categor-list">
                                         @php
                                             $brands=DB::table('brands')->orderBy('title','ASC')->where('status','active')->get();
@@ -130,28 +130,6 @@
                             <div class="col-12">
                                 <!-- Shop Top -->
                                 <div class="shop-top">
-                                    <div class="shop-shorter">
-                                        <div class="single-shorter">
-                                            <label>Show :</label>
-                                            <select class="show" name="show" onchange="this.form.submit();">
-                                                <option value="">Default</option>
-                                                <option value="9" @if(!empty($_GET['show']) && $_GET['show']=='9') selected @endif>09</option>
-                                                <option value="15" @if(!empty($_GET['show']) && $_GET['show']=='15') selected @endif>15</option>
-                                                <option value="21" @if(!empty($_GET['show']) && $_GET['show']=='21') selected @endif>21</option>
-                                                <option value="30" @if(!empty($_GET['show']) && $_GET['show']=='30') selected @endif>30</option>
-                                            </select>
-                                        </div>
-                                        <div class="single-shorter">
-                                            <label>Sort By :</label>
-                                            <select class='sortBy' name='sortBy' onchange="this.form.submit();">
-                                                <option value="">Default</option>
-                                                <option value="title" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='title') selected @endif>Name</option>
-                                                <option value="price" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='price') selected @endif>Price</option>
-                                                <option value="category" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='category') selected @endif>Category</option>
-                                                <option value="brand" @if(!empty($_GET['sortBy']) && $_GET['sortBy']=='brand') selected @endif>Brand</option>
-                                            </select>
-                                        </div>
-                                    </div>
                                     <ul class="view-mode">
                                         <li class="active"><a href="javascript:void(0)"><i class="fa fa-th-large"></i></a></li>
                                         <li><a href="{{route('product-lists')}}"><i class="fa fa-th-list"></i></a></li>
@@ -174,16 +152,16 @@
                                                     <img class="default-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
                                                     <img class="hover-img" src="{{$photo[0]}}" alt="{{$photo[0]}}">
                                                     @if($product->discount)
-                                                                <span class="price-dec">{{$product->discount}} % Off</span>
+                                                                <span class="price-dec">{{$product->discount}} % Giảm Giá</span>
                                                     @endif
                                                 </a>
                                                 <div class="button-head">
                                                     <div class="product-action">
-                                                        <a data-toggle="modal" data-target="#{{$product->id}}" title="Quick View" href="#"><i class=" ti-eye"></i><span>Quick Shop</span></a>
-                                                        <a title="Wishlist" href="{{route('add-to-wishlist',$product->slug)}}" class="wishlist" data-id="{{$product->id}}"><i class=" ti-heart "></i><span>Add to Wishlist</span></a>
+                                                        <a data-toggle="modal" data-target="#{{$product->id}}" title="Quick View" href="#"><i class=" ti-eye"></i><span>Xem Ngay</span></a>
+                                                        <a title="Wishlist" href="{{route('add-to-wishlist',$product->slug)}}" class="wishlist" data-id="{{$product->id}}"><i class=" ti-heart "></i><span>Thêm Vào Danh Sách Yêu Thích</span></a>
                                                     </div>
                                                     <div class="product-action-2">
-                                                        <a title="Add to cart" href="{{route('add-to-cart',$product->slug)}}">Add to cart</a>
+                                                        <a title="Add to cart" href="{{route('add-to-cart',$product->slug)}}">Thêm Vào Giỏ Hàng</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -199,15 +177,15 @@
                                     </div>
                                 @endforeach
                             @else
-                                    <h4 class="text-warning" style="margin:100px auto;">There are no products.</h4>
+                                    <h4 class="text-warning" style="margin:100px auto;">Không có sản phẩm nào.</h4>
                             @endif
 
 
 
                         </div>
                         <div class="row">
-                            <div class="col-md-12 justify-content-center d-flex">
-                                {{$products->appends($_GET)->links()}}
+                            <div class="col-md-12 d-flex justify-content-center">
+                                {{ $products->links('pagination::simple-bootstrap-4') }}
                             </div>
                           </div>
 
@@ -272,13 +250,13 @@
                                                             @endif
                                                         @endfor
                                                     </div>
-                                                    <a href="#"> ({{$rate_count}} customer review)</a>
+                                                    <a href="#"> ({{$rate_count}} đánh giá của khách hàng)</a>
                                                 </div>
                                                 <div class="quickview-stock">
                                                     @if($product->stock >0)
-                                                    <span><i class="fa fa-check-circle-o"></i> {{$product->stock}} in stock</span>
+                                                    <span><i class="fa fa-check-circle-o"></i> {{$product->stock}} trong kho</span>
                                                     @else
-                                                    <span><i class="fa fa-times-circle-o text-danger"></i> {{$product->stock}} out stock</span>
+                                                    <span><i class="fa fa-times-circle-o text-danger"></i> {{$product->stock}} hết hàng</span>
                                                     @endif
                                                 </div>
                                             </div>
@@ -306,7 +284,7 @@
                                             <div class="size">
                                                 <div class="row">
                                                     <div class="col-lg-6 col-12">
-                                                        <h5 class="title">Size</h5>
+                                                        <h5 class="title">Kích cỡ</h5>
                                                         <select>
                                                             @php
                                                             $sizes=explode(',',$product->size);
@@ -349,7 +327,7 @@
                                                     <!--/ End Input Order -->
                                                 </div>
                                                 <div class="add-to-cart">
-                                                    <button type="submit" class="btn">Add to cart</button>
+                                                    <button type="submit" class="btn">Thêm Vào Giỏ Hàng</button>
                                                     <a href="{{route('add-to-wishlist',$product->slug)}}" class="btn min"><i class="ti-heart"></i></a>
                                                 </div>
                                             </form>
